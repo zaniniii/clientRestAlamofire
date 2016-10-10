@@ -1,0 +1,6 @@
+framework module Pods_clientRestful {
+  umbrella header "Pods-clientRestful-umbrella.h"
+
+  export *
+  module * { export * }
+}
