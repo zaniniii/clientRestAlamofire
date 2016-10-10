@@ -11,9 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     let api = requestApi()
+    typealias JSONStandard = [String : AnyObject]
+    
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtResult: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +45,13 @@ class ViewController: UIViewController {
                 
                 if error != nil{
                     
-                    print(result?["msg"])
+                    self.txtResult.text = result?["msg"] as! String?
                     
                 }else{
                     
-                    print(result)
-                    
+                    if let dados = result?["data"] as! JSONStandard!{
+                        self.txtResult.text = dados["name"] as! String?
+                    }
                 }
                 
             }

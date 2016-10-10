@@ -59,18 +59,30 @@
                                     <action selector="logar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sLt-9a-Aa2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihz-QN-uOw">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cmn-wX-qGO"/>
+                                    <constraint firstAttribute="width" constant="320" id="pIh-mC-YjI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.52159569300518127" green="0.52159569300518127" blue="0.52159569300518127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kr3-Ua-ftW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="1sc-dJ-AtM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ihz-QN-uOw" secondAttribute="trailing" constant="12" id="9cx-Vk-bQq"/>
                             <constraint firstItem="UPQ-Si-EEZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="E9k-hD-x1d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kr3-Ua-ftW" secondAttribute="trailing" constant="12" id="IRj-5Q-36o"/>
+                            <constraint firstItem="ihz-QN-uOw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="JzV-mH-1iP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UPQ-Si-EEZ" secondAttribute="trailing" constant="12" id="LEk-Gg-ygo"/>
                             <constraint firstItem="Kr3-Ua-ftW" firstAttribute="top" secondItem="p7j-sl-31N" secondAttribute="bottom" constant="8" id="MzX-7v-jOP"/>
                             <constraint firstItem="p7j-sl-31N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="N8O-tT-Zdj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gzv-qt-cQK" secondAttribute="trailing" constant="12" id="Tks-67-2C9"/>
                             <constraint firstItem="Gzv-qt-cQK" firstAttribute="top" secondItem="Kr3-Ua-ftW" secondAttribute="bottom" constant="14" id="Xsd-qH-BNV"/>
                             <constraint firstItem="UPQ-Si-EEZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="aRY-Ux-4d0"/>
+                            <constraint firstItem="ihz-QN-uOw" firstAttribute="top" secondItem="Gzv-qt-cQK" secondAttribute="bottom" constant="23" id="lT5-qG-Lyp"/>
                             <constraint firstItem="Gzv-qt-cQK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="vHZ-MK-5ma"/>
                             <constraint firstItem="p7j-sl-31N" firstAttribute="top" secondItem="UPQ-Si-EEZ" secondAttribute="bottom" constant="25" id="vNM-U0-e7G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p7j-sl-31N" secondAttribute="trailing" constant="12" id="vlO-iI-k9s"/>
@@ -79,6 +91,7 @@
                     <connections>
                         <outlet property="txtEmail" destination="p7j-sl-31N" id="6Ny-dS-bKZ"/>
                         <outlet property="txtPassword" destination="Kr3-Ua-ftW" id="9LV-92-Hk6"/>
+                        <outlet property="txtResult" destination="ihz-QN-uOw" id="anm-my-MFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
