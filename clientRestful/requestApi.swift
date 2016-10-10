@@ -23,7 +23,7 @@ class requestApi: NSObject {
     private typealias JSONStandard = [String : AnyObject]
     
     
-    func request(endpoint: String, method: HTTPMethod, params: Dictionary<String, AnyObject>? = nil, token: String? = nil,   completion:@escaping (_ success: Bool, _ object: AnyObject?) -> ()){
+    func request(endpoint: String, method: HTTPMethod, params: Dictionary<String, AnyObject>? = nil, token: String? = nil,   completion:@escaping (_ object: AnyObject?) -> ()){
         
         if  token != nil{
             header = [
@@ -32,22 +32,18 @@ class requestApi: NSObject {
             ]
         }
         
-        Alamofire.request(baseURL + endpoint, method:method, parameters: params, encoding: URLEncoding(destination: .methodDependent), headers: header).validate().responseJSON { response in
-            switch response.result {
-            case .success:
+        Alamofire.request(baseURL + endpoint, method:method, parameters: params, encoding: URLEncoding(destination: .methodDependent), headers: header).responseJSON { response in
+            
                 
                 do{
                     let readableJSON = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as? JSONStandard
-                    completion(true, readableJSON as AnyObject!)
+                    completion(readableJSON as AnyObject!)
                 }
                 catch{
-                    completion(true, error as AnyObject!)
+                    completion(error as AnyObject!)
                 }
                 
-                
-            case .failure(let error):
-                completion(false, error as AnyObject!)
-            }
+          
         }
     }
         

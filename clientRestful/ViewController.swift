@@ -12,21 +12,11 @@ class ViewController: UIViewController {
     
     let api = requestApi()
     
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        api.request(endpoint: "/", method: .get) { (success, result) in
-           
-            if success {
-                print("Sucesso")
-                print(result?["api"])
-            }else{
-                print("Falha na comunicação com a api")
-                print(result)
-            }
-            
-        }
         
     }
 
@@ -35,6 +25,25 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func logar(_ sender: AnyObject) {
+        
+        
+        let login = [
+            "email" : self.txtEmail.text! as String,
+            "password" : self.txtPassword.text! as String
+        ]
+        
+        api.request(endpoint: "/pt/login", method: .post, params: login as Dictionary<String, AnyObject>?) { (result) in
+            
+            if (result?.error != nil) {
+                print("sucesso")
+            }else{
+                print("erro")
+                print(result)
+            }
+            
+        }
+        
+        
+    }
 }
-
