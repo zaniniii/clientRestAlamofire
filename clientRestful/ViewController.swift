@@ -33,13 +33,21 @@ class ViewController: UIViewController {
             "password" : self.txtPassword.text! as String
         ]
         
-        api.request(endpoint: "/pt/login", method: .post, params: login as Dictionary<String, AnyObject>?) { (result) in
+        api.request(endpoint: "/en/login", method: .post, params: login as Dictionary<String, AnyObject>?) { (result) in
             
-            if (result?.error != nil) {
-                print("sucesso")
-            }else{
-                print("erro")
-                print(result)
+            
+            if let error = result?["error"]{
+                
+                if error != nil{
+                    
+                    print(result?["msg"])
+                    
+                }else{
+                    
+                    print(result)
+                    
+                }
+                
             }
             
         }

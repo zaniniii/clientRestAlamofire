@@ -34,7 +34,7 @@ class requestApi: NSObject {
         
         Alamofire.request(baseURL + endpoint, method:method, parameters: params, encoding: URLEncoding(destination: .methodDependent), headers: header).responseJSON { response in
             
-                
+            
                 do{
                     let readableJSON = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as? JSONStandard
                     completion(readableJSON as AnyObject!)
@@ -42,7 +42,7 @@ class requestApi: NSObject {
                 catch{
                     completion(error as AnyObject!)
                 }
-                
+            
           
         }
     }
