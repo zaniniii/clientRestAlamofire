@@ -68,6 +68,19 @@
                                 <color key="textColor" red="0.52159569300518127" green="0.52159569300518127" blue="0.52159569300518127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3x-x7-wVM">
+                                <color key="backgroundColor" red="1" green="0.43983393961147033" blue="0.4091613015757869" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="QFC-IJ-BQx"/>
+                                    <constraint firstAttribute="width" constant="320" id="khC-Qg-2B5"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNj-mc-Pld"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -79,16 +92,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UPQ-Si-EEZ" secondAttribute="trailing" constant="12" id="LEk-Gg-ygo"/>
                             <constraint firstItem="Kr3-Ua-ftW" firstAttribute="top" secondItem="p7j-sl-31N" secondAttribute="bottom" constant="8" id="MzX-7v-jOP"/>
                             <constraint firstItem="p7j-sl-31N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="N8O-tT-Zdj"/>
+                            <constraint firstItem="q3x-x7-wVM" firstAttribute="top" secondItem="ihz-QN-uOw" secondAttribute="bottom" constant="46" id="OkX-Mf-2at"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gzv-qt-cQK" secondAttribute="trailing" constant="12" id="Tks-67-2C9"/>
                             <constraint firstItem="Gzv-qt-cQK" firstAttribute="top" secondItem="Kr3-Ua-ftW" secondAttribute="bottom" constant="14" id="Xsd-qH-BNV"/>
                             <constraint firstItem="UPQ-Si-EEZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="aRY-Ux-4d0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q3x-x7-wVM" secondAttribute="trailing" constant="12" id="bE5-gt-dmu"/>
                             <constraint firstItem="ihz-QN-uOw" firstAttribute="top" secondItem="Gzv-qt-cQK" secondAttribute="bottom" constant="23" id="lT5-qG-Lyp"/>
+                            <constraint firstItem="q3x-x7-wVM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="nRP-fO-OhM"/>
                             <constraint firstItem="Gzv-qt-cQK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="vHZ-MK-5ma"/>
                             <constraint firstItem="p7j-sl-31N" firstAttribute="top" secondItem="UPQ-Si-EEZ" secondAttribute="bottom" constant="25" id="vNM-U0-e7G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p7j-sl-31N" secondAttribute="trailing" constant="12" id="vlO-iI-k9s"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnLogout" destination="q3x-x7-wVM" id="ZjO-Fb-Bkv"/>
                         <outlet property="txtEmail" destination="p7j-sl-31N" id="6Ny-dS-bKZ"/>
                         <outlet property="txtPassword" destination="Kr3-Ua-ftW" id="9LV-92-Hk6"/>
                         <outlet property="txtResult" destination="ihz-QN-uOw" id="anm-my-MFU"/>
